@@ -1,0 +1,44 @@
+{
+    "Categories": [
+      {
+        "id": 10204,
+        "name": "Fashion > Clothing > Suits"
+      },
+      {
+        "id": 10221,
+        "name": "Fashion > Clothing > Swimwear"
+      },
+      {
+        "id": 10246,
+        "name": "Fashion > Clothing > Blouses"
+      },
+      {
+        "id": 10263,
+        "name": "Fashion > Clothing > Boleros"
+      },
+      {
+        "id": 10268,
+        "name": "Fashion > Clothing > Shirts"
+      },
+      {
+        "id": 10581,
+        "name": "Fashion > Shoes > Ballet Flats"
+      },
+      {
+        "id": 10607,
+        "name": "Fashion > Shoes > High Heels"
+      },
+      {
+        "id": 10612,
+        "name": "Fashion > Shoes > Mules"
+      },
+      {
+        "id": 10641,
+        "name": "Fashion > Shoes > Sneakers"
+      },
+      {
+        "id": 10691,
+        "name": "Fashion > Shoes > Flip-Flops"
+      }
+    ]
+  }

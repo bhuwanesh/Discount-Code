@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="content" style="text-align: center">
+    <form action="/" method="POST">
+        {{ form.hidden_tag() }}
+        <br><br><br><br>
+        Choose Category : {{ form.subcategory }}
+        <br><br>
+        Choose Product : {{ form.product }}
+        <br><br>
+        Choose Discount Type: {{ form.discount_type }}
+        <br><br>
+        Select Minimum price: {{ form.minimum_price }}
+        <br><br>
+        {{ form.submit() }}
+    </form>
+</div>
+<br><br><br><br>
+<div class="content">
+    <h1 style="text-align: center">Discount Master</h1>
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">There are no Discounts in the list. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Product</th>
+            <th>Discount Type Available</th>
+            <th>Minimum Price</th>
+            <th>Discount Code</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content1 }}</td>
+                <td>{{ task.content }}</td>
+                <td>{{ task.content2 }}</td>
+                <td>{{ task.content3 }}</td>
+                <td>{{ task.discount_code }}</td>
+                <td>
+                    <a href="/delete/{{task.content}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
+
+
