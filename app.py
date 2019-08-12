@@ -40,11 +40,11 @@ dataframe = dataframe[['id','category','sub_category','products','discount_type'
 # Creating a class Infoform using FlaskForm and WTforms
 class InfoForm(FlaskForm):
     subcategory = SelectField(u"Choose your Category:",
-                            choices=choice_creation(dataframe.sub_category.unique()))
+                            choices = choice_creation(dataframe.sub_category.unique()), default = None)
     product = SelectField(u"Choose your Product:",
-                            choices=choice_creation(dataframe.products.unique()))
-    discount_type = SelectField(u"Choose your Discount Type:",
-                            choices=choice_creation(dataframe.discount_type.unique()))
+                            choices = choice_creation(dataframe.products.unique()))
+    discount_form = SelectField(u"Choose your Discount Type:",
+                            choices = choice_creation(dataframe.discount_type.unique()))
     minimum_price = TextField('Select the Minimum Price: ')
     submit = SubmitField('Generate Code and Save')
 
@@ -75,7 +75,7 @@ def index():
     if request.method == 'POST' and form.validate_on_submit():
         task_subcat = form.subcategory.data
         task_content = form.product.data
-        task_content2 = form.discount_type.data
+        task_content2 = form.discount_form.data
         task_content3 = form.minimum_price.data
         codenew = generate_uuid()
         new_task = DiscountList(content=task_content, content1 = task_subcat, content2 = task_content2, discount_code=codenew, content3 = task_content3)
