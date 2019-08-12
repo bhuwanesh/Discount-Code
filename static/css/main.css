@@ -8,28 +8,14 @@ body, html {
     width: 1000px;
 }
 
-table, td, th {
-    border: 1px solid #aaa;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
 th {
     height: 30px;
 }
 
 td {
-    text-align: center;
     padding: 5px;
 }
 
 .form {
     margin-top: 20px;
-}
-
-#content {
-    width: 70%;
 }

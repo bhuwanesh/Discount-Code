@@ -7,27 +7,30 @@
 {% block body %}
 
 <div class="content" style="text-align: center">
+    <h1>Task Master</h1>
     <form action="/" method="POST">
         {{ form.hidden_tag() }}
         <br><br><br><br>
-        Choose Category : {{ form.subcategory }}
+        Choose Category : {{ form.subcategory(class="alert-info dropdown-toggle") }}
         <br><br>
-        Choose Product : {{ form.product }}
+        Choose Product : {{ form.product(class="alert-info dropdown-toggle") }}
         <br><br>
-        Choose Discount Type: {{ form.discount_form }}
+        Choose Discount Type: {{ form.discount_form(class="alert-info dropdown-toggle") }}
         <br><br>
-        Select Minimum price: {{ form.minimum_price }}
+        Enter Minimum price: {{ form.minimum_price }}
         <br><br>
-        {{ form.submit() }}
+        {{ form.submit(class="btn btn-success") }}
     </form>
 </div>
-<br><br><br><br>
+<br><br>
 <div class="content">
     <h1 style="text-align: center">Discount Master</h1>
+    <br>
     {% if tasks|length < 1 %}
     <h4 style="text-align: center">There are no Discounts in the list. Create one below!</h4>
+    <br>
     {% else %}
-    <table>
+    <table class="table table-striped">
         <tr>
             <th>Category</th>
             <th>Product</th>
@@ -36,14 +39,16 @@
             <th>Discount Code</th>
         </tr>
         {% for task in tasks %}
-            <tr>
+            <tr class="table-info">
                 <td>{{ task.content1 }}</td>
                 <td>{{ task.content }}</td>
                 <td>{{ task.content2 }}</td>
                 <td>{{ task.content3 }}</td>
                 <td>{{ task.discount_code }}</td>
                 <td>
-                    <a href="/delete/{{task.content}}">Delete</a>
+                    <a href="/delete/{{task.content}}" class="btn btn-info btn-md">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
                 </td>
             </tr>
         {% endfor %}
